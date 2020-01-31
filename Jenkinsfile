@@ -6,6 +6,7 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
+                sh "yum install docker -y"
                 sh "docker build . -t snaruto7/nodeapp:${DOCKER_TAG} "
             }
         }
